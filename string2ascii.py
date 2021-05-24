@@ -36,4 +36,4 @@ def string2asc(text):
     file.close()
 
 
-string2asc("OOOOÑAAAA")
+string2asc("Valeria")
