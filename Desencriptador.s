@@ -1,5 +1,5 @@
 			
-			MOV		R0, #0X400 ; Para guardar en memoria los cracteres: Hello, World!
+			MOV		R0, #0X400 ; Para guardar en memoria los caracteres: Hello, World!
 			MOV		R1, #0x500 ; Para guardar en memoria los datos descifrados
 			MOV		R11, #2 ; Para asignar 1 a la xor, 2 a la not y 3 a sum2
 			
@@ -27,8 +27,6 @@
 			STR		R2, [R0], #4
 			MOV		R2, #81 ;#100  ;  d
 			STR		R2, [R0], #4
-			MOV		R2, #20 ;#33   ;  !
-			STR		R2, [R0], #4
 			MOV		R2, #0x0a  ;  EOL
 			STR		R2, [R0], #4
 			MOV		R0, #0x400
@@ -48,14 +46,14 @@ XORDES
 			LDR		R3, [R0], #4
 			CMP		R3, #0xA    ; EOL
 			BNE		XORDES_AUX
-			B		finalizar
+			END
 			
 			;		Se estan usando R0 y R3
 			
 XORDES_AUX
 			MOV		R9, #53
 			LDR		R4, [R1], #4 ; Carga de caracter encriptado
-			LDR		R5, [R2], #4 ; Carga de numero pseudoaleatorio
+			LDR		R5, [R2], #4 
 			EOR		R6, R9, R5
 			STR		R6, [R7], #4
 			B		XORDES
@@ -67,18 +65,17 @@ NOTDES
 			LDR		R3, [R0], #4
 			CMP		R3, #0xA    ; EOL
 			BNE		NOTDES_AUX
-			B		finalizar
+			END
 			
 			;		Se estan usando R0 y R3
 			
 NOTDES_AUX
 			MOV		R9, #255
 			LDR		R4, [R1], #4 ; Carga de caracter encriptado
-			LDR		R5, [R2], #4 ; Carga de numero pseudoaleatorio
+			LDR		R5, [R2], #4 
 			SUB		R6, R9, R5
 			STR		R6, [R7], #4
 			B		NOTDES
-			
 			;		Se estan usando R9,
 			
 			
@@ -86,22 +83,16 @@ SUM2DES
 			LDR		R3, [R0], #4
 			CMP		R3, #0xA    ; EOL
 			BNE		SUM2DES_AUX
-			B		finalizar
-			
+			END
+
 			;		Se estan usando R0 y R3
 			
 SUM2DES_AUX
 			LDR		R4, [R1], #4 ; Carga de caracter encriptado
-			LDR		R5, [R2], #4 ; Carga de numero pseudoaleatorio
+			LDR		R5, [R2], #4 
 			ADD		R6, R5, #2
 			STR		R6, [R7], #4
 			B		SUM2DES
-			
 			;		Se estan usando R9,
-			
-			
-finalizar
-			END
-			
 			
 			
