@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY notGate
+set_global_assignment -name TOP_LEVEL_ENTITY sla
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:06:44  MAY 25, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -59,6 +59,14 @@ set_global_assignment -name SYSTEMVERILOG_FILE orGate.sv
 set_global_assignment -name SYSTEMVERILOG_FILE xorGate.sv
 set_global_assignment -name SYSTEMVERILOG_FILE fullAdder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE notGate.sv
+set_global_assignment -name SYSTEMVERILOG_FILE muxResultALU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flagGenerator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ROM_Ins.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sll.sv
+set_global_assignment -name SYSTEMVERILOG_FILE srl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sla.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sra.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
