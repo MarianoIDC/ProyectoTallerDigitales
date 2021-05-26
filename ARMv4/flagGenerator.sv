@@ -1,7 +1,7 @@
-module flagGenerator #(parameter M = 4)(input logic [M-1:0] Q, input logic [3:0] ALUControl, input logic Cout, Sign, MultV, output logic Z, N, V, C);
+module flagGenerator #(parameter M = 4)(input logic [M-1:0] muxResultado, input logic [3:0] ALUControl, input logic Cout, Sign, MultV, output logic Z, N, V, C);
 
     always_comb begin
-        Z <= 1'b0;
+		Z <= 1'b0;
 		N <= 1'b0;
 		C <= 1'b0;
 		V <= 1'b0;
@@ -15,7 +15,7 @@ module flagGenerator #(parameter M = 4)(input logic [M-1:0] Q, input logic [3:0]
 			end
 		else if(ALUControl == 4'b0010)
             V <= MultV;
-		else if(Q == 4'b0000)
+		else if(muxResultado == 4'b0000)
             Z <= 1'b1;
     end
 
