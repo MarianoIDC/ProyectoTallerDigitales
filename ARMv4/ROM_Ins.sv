@@ -11,15 +11,15 @@ module ROM_Ins
 always @*
 	begin
 		 case(addr)
-				8'b00000000 : data = 32'he3a00b01;//0
-				8'b00000001 : data = 32'he3a01c05;//1
-				8'b00000010 : data = 32'he3a0b002;//2
-				8'b00000011 : data = 32'he3a0207d;//3
-				8'b00000100 : data = 32'he4802004;//4
-				8'b00000101 : data = 32'he3a02050;//5
-				8'b00000110 : data = 32'he4802004;//6
-				8'b00000111 : data = 32'he3a02059;//7
-				8'b00001000 : data = 32'he4802004;//8
+				8'b00000000 : data = 32'he3a00b01;//0 Guardar en memoria la frase
+				8'b00000001 : data = 32'he3a01c05;//1 Guardar los datos descifrados
+				8'b00000010 : data = 32'he3a0b002;//2 escoger desencriptado
+				8'b00000011 : data = 32'he3a0207d;//3 m
+				8'b00000100 : data = 32'he4802004;//4 s
+				8'b00000101 : data = 32'he3a02050;//5 m
+				8'b00000110 : data = 32'he4802004;//6 s
+				8'b00000111 : data = 32'he3a02059;//7 m
+				8'b00001000 : data = 32'he4802004;//8 s 
 				8'b00001001 : data = 32'he3a02059;//9
 				8'b00001010 : data = 32'he4802004;//10
 				8'b00001011 : data = 32'he3a0205a;//11
