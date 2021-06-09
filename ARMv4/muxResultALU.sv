@@ -5,7 +5,7 @@ module muxResultALU #(parameter N = 4)(input logic [N-1:0] resultADD, resultSUB,
     always_comb begin
 		case(ALUControl)
          4'b0000 : result <= resultADD;
-         4'b0001 : result <= resultSUB;
+         4'b0001 : result <= resultADD;
          4'b0010 : result <= resultMULT;
          4'b0011 : result <= resultDIV;
          4'b0100 : result <= resultSLL;

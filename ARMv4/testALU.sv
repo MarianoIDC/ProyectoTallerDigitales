@@ -9,23 +9,54 @@ module testALU();
       $display("---------------SUMADOR---------------");
       #10 A = 4'b0100; B = 4'b0011; ALUControl = 4'b0000;
       #1
-      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl,R);
-      assert (R === 'b0111) else $error ("0111 failed.");
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b0111) else $error ("0111 failed.");
 
       #10 A = 4'b0010; B = 4'b0000; ALUControl = 4'b0000;
       #1
       $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
-      assert (R === 'b0010) else $error ("0010 failed.");
+      // assert (R === 'b0010) else $error ("0010 failed.");
 
       #10 A = 4'b1000; B = 4'b0010;
       #1 
       $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
-      assert (R === 'b1010) else $error ("1010 failed.");
+      // assert (R === 'b1010) else $error ("1010 failed.");
 
       #10 A = 4'b1000; B = 4'b1010;
       #1 
       $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
-      assert (R === 'b0010) else $error ("0010 failed.");
+      // assert (R === 'b0010) else $error ("0010 failed.");
+
+      $display("---------------RESTADOR---------------");
+      #10 A = 4'b0000; B = 4'b0000; ALUControl = 4'b0001;
+      #1
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b0111) else $error ("0111 failed.");
+
+      #10 A = 4'b0000; B = 4'b1111; ALUControl = 4'b0001;
+      #1
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b0010) else $error ("0010 failed.");
+
+      #10 A = 4'b1111; B = 4'b0000;
+      #1 
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b1010) else $error ("1010 failed.");
+
+      #10 A = 4'b1111; B = 4'b1111;
+      #1 
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b0010) else $error ("0010 failed.");
+
+      #10 A = 4'b0110; B = 4'b0001;
+      #1 
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b0010) else $error ("0010 failed.");
+
+      #10 A = 4'b0001; B = 4'b0111;
+      #1 
+      $display("A = %b, B = %b, ALUControl = %b, R = %b\n", A, B, ALUControl, R);
+      // assert (R === 'b0010) else $error ("0010 failed.");
 
       $display("---------------AND GATE---------------");
       #10 A = 4'b0100; B = 4'b0110; ALUControl = 4'b0110; 

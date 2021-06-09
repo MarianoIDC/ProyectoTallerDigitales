@@ -1,9 +1,9 @@
 module ALU #(parameter M = 4)(input logic [M-1:0] a, b, input logic [3:0] ALUControl, output logic [M-1:0] resultado, output logic Z, N, V, C);
 
-    logic [M-1:0] resultadoADD, resultadoSUB, resultadoMULT, resultadoDIV, resultadoSLL, resultadoSRL, resultadoAND, resultadoOR, resultadoXOR, resultadoNOT;
+    logic [M-1:0] resultadoADD, resultadoSUB, resultadoMULT, resultadoDIV, resultadoSLL, resultadoSRL, resultadoAND, resultadoOR, resultadoXOR, resultadoNOT, resultadoB;
     logic cout, sign, multv;
 
-    fullAdder #(M) sumador (a, b, resultadoADD, cout);
+    fullAdder #(M) sumadorestador (a, resultadoB, ALUControl[0], resultadoADD, cout);
 
     multiplication #(M) multiplicador (a, b, resultadoMULT, multv);
 
@@ -21,8 +21,10 @@ module ALU #(parameter M = 4)(input logic [M-1:0] a, b, input logic [3:0] ALUCon
 
     notGate #(M) notComp (a, resultadoNOT);
 
+    muxNOT #(M) signB (b, ALUControl[0], resultadoB);
+
     muxResultALU #(M) muxResultados (resultadoADD, resultadoSUB, resultadoMULT, resultadoDIV, resultadoSLL, resultadoSRL, resultadoAND, resultadoOR, resultadoXOR, resultadoNOT, ALUControl, resultado);
 
-    flagGenerator #(M) banderas (resultado, ALUControl, cout, sign, multv, Z, N, V, C);
+    flagGenerator #(M) banderas (a, b, resultado, ALUControl, cout, multv, Z, N, V, C);
 
 endmodule 
