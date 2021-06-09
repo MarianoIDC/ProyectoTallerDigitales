@@ -4,17 +4,17 @@ module muxResultALU #(parameter N = 4)(input logic [N-1:0] resultADD, resultSUB,
 
     always_comb begin
 		case(ALUControl)
-		4'b0000 : result <= resultADD;
-		4'b0001 : result <= resultSUB;
-		4'b0010 : result <= resultMULT;
-		4'b0011 : result <= resultDIV;
-      4'b0100 : result <= resultSLL;
-      4'b0100 : result <= resultSRL;
-      4'b0100 : result <= resultAND;
-      4'b0100 : result <= resultOR;
-      4'b0100 : result <= resultXOR;
-      4'b0100 : result <= resultNOT;
-		default : result <= resultADD;
+         4'b0000 : result <= resultADD;
+         4'b0001 : result <= resultSUB;
+         4'b0010 : result <= resultMULT;
+         4'b0011 : result <= resultDIV;
+         4'b0100 : result <= resultSLL;
+         4'b0101 : result <= resultSRL;
+         4'b0110 : result <= resultAND;
+         4'b0111 : result <= resultOR;
+         4'b1000 : result <= resultXOR;
+         4'b1001 : result <= resultNOT;
+         default : result <= resultADD;
       endcase
     end
 
