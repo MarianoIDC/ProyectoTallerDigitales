@@ -17,7 +17,7 @@ def string2asc(text):
     n = len(text)
     if(validateString(text, n)):
         file2 = open("Python\code.txt", "w")
-        file = open("ARMv4\memory_data.mif", "w")
+        file = open("Procesador\memory_data.mif", "w")
         file.write("WIDTH=8;\n")
         file.write("DEPTH=256;\n")
         file.write("ADDRESS_RADIX=UNS;\n")

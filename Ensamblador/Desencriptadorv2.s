@@ -35,7 +35,9 @@
 			CMP		R11, #3
 			BEQ		SUM2DES
 			;		Se estan usando R0, R1 y R2
-			
+
+LEER 		
+								
 			
 XORDES
 			LDR		R3, [R0], #4
