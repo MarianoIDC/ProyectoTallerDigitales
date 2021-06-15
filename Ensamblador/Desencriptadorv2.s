@@ -1,4 +1,4 @@
-			MOV		R0, #0X400 ; Para guardar en memoria los cracteres: Hello World
+			MOV		R0, #0X000 ; Para guardar en memoria los cracteres: Hello World
 			MOV		R1, #0X500 ; Para guardar en memoria los datos descifrados
 			MOV		R8, #0X600
 			
@@ -40,10 +40,10 @@
 			
 LEER
 			
-			
 			;PARA	EFECTOS DEL PROYECTO SE DEBE INICIALIZAR UN REGISTRO EN EN INICION DE LA MEMORIA
+			;MOV		R0, 0x000
 			LDR		R12, [R0], #4
-			STR		R12, [R8], #4
+			;STR		R12, [R8], #4
 			CMP		R12, #0XA
 			BNE		LEER
 			MOV		R12, #0X600

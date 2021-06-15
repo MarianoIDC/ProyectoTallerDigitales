@@ -6,7 +6,7 @@ module instructionDecoder(clk,enable,instruccion,
 									done);
 									
 	input [31:0] instruccion;
-	
+		
 	input enable,clk;
 	
 	output logic flagEnableAlu,ImmediateOper,flagEnableIO,flagEnableBX;
